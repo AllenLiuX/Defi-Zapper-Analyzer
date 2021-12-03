@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "koin-294706",
+  "private_key_id": "4d2a55d671fca5680d5cf28dd031bd2cdbe82bb1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCReN2YUwQd0Rqn\n/83usOthKzkP1ujtpK4VHkKMFq6uPHuMHIVPi8q/Njdc1eBYpSJMhiDRm7M2chPm\nlHkCE8zwIuwlGCAsMBtoQr+JGRIJc5izOIIG7vG3Bomv4fNrei2ojNIxV94Fi9lB\nvL3UCSD2pMClqVhvk5rQu2eUpgR16Zr0IYF7rWZ/X4pYVtI+PKkp6N77joDWVqkF\n2v7qpWXxf88v9CAXhWf0vvGEmXIPybWVOq38Ju3a0mQA0HNtIFt0BhcDvZ9XbACP\nyNqyhCN9UkQrD3oxIBKKt/eMACAlIVbBk7wSmfm1se/f0PzEVPTGJ704EkigKlf5\njVmEdQdnAgMBAAECggEAJo/ICfNjoXXHH6aHE9FRK9pVz3WUHD6tqMpzMIhouKYu\nx+bdjccMMSCxj0ngpQ7tJyTc+UNRP8sArHxKEXtnNXbEa1bYXG5KLZqYBEMhjWDX\npxaBHU5kw7QXdoiqSqDCDq55n3vfzk+SgUMDfPwIgWkN6jwYRcd2YAN1gyl5ADpM\nmhG5Cba4z5dmJJoIL65R/LlyodFTYqY9z4AFk2WHN2JZPytvnmtCMud/CLHoebaF\nqrY3dshAMFA2KkD3g1Dd0wxs/AjVtdgIpwo10WvdXmaAj/G57Xwi1Wour2nfB0Yc\nBDbISgfWBAShYl7BQBnOzvFRmE2epGhiRDLLQoATUQKBgQDKvOs9JGHRYQxBLpv/\nwitWnqkCdUDajM+eIzmANe3KubUATW/qSxa8Ijp2rFyamKUduyHuiEuOk+MQoMHC\nuTRzZW0D3/mypfyrM6EdsYFgj/pb8fEE6y/m4Fsltju/l0XwfRs/0CtdC3L84p1S\n1OZiRTcSDBbVZblletBaur2CVwKBgQC3sIzccFmRCDBZzqbZzEKxVQlze6R6YcJG\nMaASYh7rFKOBZyyKtYq2QMLyRs9BYM2lQ/vCexbPW48sjc2a5Zc7UtvE5HonI/sn\nx9jyhd4FPgZHKQBAVq9C7snkwSpZxgGbAKqM+Qm0/SQHL0XAGaoMP44OIvQLzcGF\nULlzrwwZcQKBgBVnYpJ+79DSJSAQkqmqzzaC46b9yA4KxbSVVXHCv8siVgilJEah\nDNJp7rAuvEwaB3yfEBMF0qxH0rYjsrEjKnVwZNT+5XbF7WoJtl3TKqyOJslkPqTd\nS55dW2Ic3iv5BYpBOwo+qQVWuxoVtrRTA8umMQ03t4VqCuu6zpp1kqJbAoGAK2nF\nkN/Yu0dFLiSCGJ2G8aRYbHu/XtE1+iMGYvHfvs2M6yt4QnwvgW2C5YHIv/niAHo1\nyTwQIwfPqccF3eL/QB0QJdOd7xw44qj/5CmxVGnZT/4nug0CtP38p1zj5n2+qWSZ\n6mF9YtIlLrGEeadXIjfvGfY22YdSgnCWs/meEXECgYAUJPZd9ikTF4A6eKVG1lPP\ndLYBUvVyd6V8JD+/jvu1FbcmasgwBv0bPa8PwXXXn3K1zlnXdiuOhMwBrj9vB9ok\n75kZrtPiQJVnfkC4gunZD1wTXQvyvOTGwcxczB50eXD2ds0bWTJG4Y9A1a1X53zl\nMS0/RtmWxNEI23+59aHMbg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "zapperbalance@koin-294706.iam.gserviceaccount.com",
+  "client_id": "110405275962862036244",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/zapperbalance%40koin-294706.iam.gserviceaccount.com"
+}

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "defi-334000",
+  "private_key_id": "410407de395bf8237b0e831a20f90a08bdc1d8e4",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCqdsYrpg/OOpB1\n3FubMRXyboA/T/zzjmXPLVHJi0W3OhwDA0VXeUAjT06wpezfqZsYWHwQza+yt1+U\nvj8Qxz4IXBAxxDQXHw1BFZcF7vxemeBl21CMNmdve3EL7gyCRCWl1GecXoLkRXJC\nYCPGmTVqpEW1u25LLFUthoNLgak+CEWoHrRtf631scMyfzREzZO8seoOxwQm6cpQ\nLazn0TGWBGKJIMi3DIhEn+YWedHCece4C9dwc0cGlZAo61sw6/9TjctKhOYc/g6J\nkc/NKpTOWV41HfbkiVXJ5YlYviqNk5K7brmzZp5posr9YHKoqEOAKqY/BnzWOclu\n9gaDpZXDAgMBAAECggEARF5A2w7Odgs9F1hbEWJdiA9TtpDxRgoNwUtO60PFoVhY\nFclBDXVfCQps6CKUX5xZzSjoEaE9X7N2TWUETEltEtNB14P21HMq0LjFCqcwZwzW\nWGPe6W2EjMz4qS0/rRuB8gG/0JKDcuR7kC2ZC7U1HGFoaBwVf2b3frvdevI1G+Bz\n4lFod9JQ78NrlxsiKSD1uaTgHqSwfEiUzb3NltAoaxUKzGj073GMtIw0OSTMcM/l\nCQcUDtozrMC5SkRA9mHif+u2/jM6hwov2U7tIJCWVG5giUxkA1WcqrpHZdaY+TDg\ncBbK2JKJkoVVjuGRuczEcSniJzJILdAhqao6HtFkUQKBgQDTm5GxTLjdR9Vja0/b\nMUY5lfNIwbf1HjRP6fB9MWfgkFtNibkdHSXkJiTLkxo3HVmV8WR+fVxR4kjPX1EQ\nmMNcpR9QKJzfRMQKsAcw97fjZt+p5rMgZqWlyQRlPxIDZsSspSuZ4bpnZ/508J02\nFqULUuwSd2MHCG8wyDtH2GDHCwKBgQDOOZK9to+V3Lat4gUJlK6BhZc8jTlMFy5V\nW3iX7YT0Y21Ihj/QN6eqKpF/JZ8v2LtGvGWiioZmfUPrRVYfhUQLFHCdYIJPp1ts\nGG5SwSxipDuMPdnxHLkd2cu5Da7uNRjr+sj+L3MaBXrsZ4/RAUBK9vawDXI+TFKV\nNJ0yk74/KQKBgDhkN/JQ6N8HeqVw/qoCOp20CU51WYm4D+bQCCfE19LvhXVnY26P\nyv4+8AVUYWMYrjwYRVi0Hbswm4iv9RGANGfnFS4udIfHcpsKiBATo+y1CJvlgAz9\nbd19cW9t3GYNqBH+Pl1W228dNqGBUdQNOtSGt6TALiK8q60LX0jpL/k7AoGAZ7pF\nuO7Oog52RFffOMZ0T+ml/Gr8Wu19/KkZqzFpIpOwMD52coDL8Kegr1d5DlPxPs8c\nP/l1SK/RLdGeVBRv+TK6wi383ZvMPD69nxpS/PqmiQ/DQ6ey5PTbp6TeTCqg8nEe\nD9xGBNyky6v7hqEeeZZm1n6s6/DvyOTB/OKbWqECgYB4JcsgpuCqAMuZ9o5rso3x\nGyzf44Jta12qfBBNNnLyUAGj/BfRkmoLfdIk4Gn2eGMNLLutXSI+ul2mYS8ekU6y\nETdyUd59EZKzHXvyDnKfsmLNFrFmrKEMWW4m5PpWsTfbtOv77aSUYreTuql+Pf1R\nmZCO1kcatkOXYIxqxQMUCQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "defi-service@defi-334000.iam.gserviceaccount.com",
+  "client_id": "118416307454260525728",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/defi-service%40defi-334000.iam.gserviceaccount.com"
+}
