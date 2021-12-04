@@ -2,19 +2,20 @@ import pygsheets
 from urllib.request import urlopen, Request
 import json
 import time
-from datetime import datetime
 import logging
 import pandas as pd
 import pprint as pp
+from croniter import croniter
+from datetime import datetime, timedelta, timezone
 
-# def test_gsheet():
-#     client = pygsheets.authorize(service_file = "defi-334000-410407de395b.json")
-#     # 打开谷歌表格testPygSheets
-#     sh = client.open('defi-database')
-#     #获取表格中的而第一张工作表
-#     wks = sh.sheet1
-#     # 更新A1数据
-#     wks.update_value('A1', "我是元素A1")
+def get_cur_time(): # NYC timezone
+    utc_dt = datetime.utcnow().replace(tzinfo=timezone.utc)
+    cur_time = utc_dt.astimezone(timezone(timedelta(hours=-5)))
+    return cur_time
+
+def str_to_datetime_with_timezone(time_str: str) -> datetime:
+    timestamp = datetime.strptime(time_str, "%Y-%m-%d %H:%M:%S").replace(tzinfo=timezone(timedelta(hours=-5)))
+    return timestamp
 
 
 class ZapperBalance(object):
@@ -139,13 +140,15 @@ class ZapperBalance(object):
         #     self.wks.update_value(addr=col+str(row), val=data[i])
 
     def process(self, network):
+        time = get_cur_time().strftime("%Y-%M-%d %H:%M")
         convex_data, convex_total = self.get_data(network, self._convexUrl)
         curve_data, curve_total = self.get_data(network, self._curveUrl)
         wallet_data, wallet_total = self.get_wallet_tokens()
-        time = datetime.now().strftime('%Y-%M-%d %H:%M')
+        
         for wallet in wallet_data:
             row_data = [time, network, 'N/A', 'wallet', wallet['symbol'], round(wallet['price'], 3), round(wallet['balance'],3), round(wallet['balanceUSD'],3)]
             self.wks.append_table(values=row_data)
+
         for protocol_datas in [convex_data, curve_data]:
             for protocol_data in protocol_datas:
                 cur_item = None
@@ -162,11 +165,28 @@ class ZapperBalance(object):
                         row_data = [time, network, protocol_data['appName'], 'claimable', claimable['symbol'], round(claimable['price'], 3), round(claimable['balance'],3), round(claimable['balanceUSD'],3), cur_item['symbol']]
                         self.wks.append_table(values=row_data)
 
-
+    def cron_trigger(self, crontab: str):  # e.g. crontab "*/10 * * * *" is triger every 5 minites
+        last_trigger = get_cur_time()
+        self.logger.info('Begin processing')
+        waiting = False
+        while True:
+            cron = croniter(crontab, last_trigger)
+            next_time = cron.get_next(datetime)
+            if get_cur_time() > next_time:
+                self.logger.info(f'Triggered at {get_cur_time().strftime("%Y-%M-%d %H:%M")}')
+                self.process(network='ethereum')
+                last_trigger = get_cur_time()
+                waiting = False
+            else:
+                if not waiting:
+                    self.logger.info(f'Waiting for the next trigger: {next_time.strftime("%Y-%M-%d %H:%M")}')
+                    waiting = True
+                time.sleep(60)
 
 
 if __name__ == '__main__':
     zb=ZapperBalance()
     # pp.pprint(zb.get_wallet_tokens())
     # zb.get_convex_tokens()
-    zb.process(network='ethereum')
+    # zb.process(network='ethereum')
+    zb.cron_trigger("*/30 * * * *")
