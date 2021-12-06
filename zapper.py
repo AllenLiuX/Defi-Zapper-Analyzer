@@ -13,9 +13,9 @@ def get_cur_time(): # NYC timezone
     cur_time = utc_dt.astimezone(timezone(timedelta(hours=-5)))
     return cur_time
 
-def str_to_datetime_with_timezone(time_str: str) -> datetime:
-    timestamp = datetime.strptime(time_str, "%Y-%m-%d %H:%M:%S").replace(tzinfo=timezone(timedelta(hours=-5)))
-    return timestamp
+# def str_to_datetime_with_timezone(time_str: str) -> datetime:
+#     timestamp = datetime.strptime(time_str, "%Y-%m-%d %H:%M:%S").replace(tzinfo=timezone(timedelta(hours=-5)))
+#     return timestamp
 
 
 class ZapperBalance(object):
@@ -140,7 +140,7 @@ class ZapperBalance(object):
         #     self.wks.update_value(addr=col+str(row), val=data[i])
 
     def process(self, network):
-        time = get_cur_time().strftime("%Y-%M-%d %H:%M")
+        time = get_cur_time().strftime("%Y-%m-%d %H:%M")
         convex_data, convex_total = self.get_data(network, self._convexUrl)
         curve_data, curve_total = self.get_data(network, self._curveUrl)
         wallet_data, wallet_total = self.get_wallet_tokens()
@@ -165,7 +165,7 @@ class ZapperBalance(object):
                         row_data = [time, network, protocol_data['appName'], 'claimable', claimable['symbol'], round(claimable['price'], 3), round(claimable['balance'],3), round(claimable['balanceUSD'],3), cur_item['symbol']]
                         self.wks.append_table(values=row_data)
 
-    def cron_trigger(self, crontab: str):  # e.g. crontab "*/10 * * * *" is triger every 5 minites
+    def cron_trigger(self, crontab: str):  # e.g. crontab "*/10 * * * *" is triger every 10- minites
         last_trigger = get_cur_time()
         self.logger.info('Begin processing')
         waiting = False
@@ -173,13 +173,13 @@ class ZapperBalance(object):
             cron = croniter(crontab, last_trigger)
             next_time = cron.get_next(datetime)
             if get_cur_time() > next_time:
-                self.logger.info(f'Triggered at {get_cur_time().strftime("%Y-%M-%d %H:%M")}')
+                self.logger.info(f'Triggered at {get_cur_time().strftime("%Y-%m-%d %H:%M")}')
                 self.process(network='ethereum')
                 last_trigger = get_cur_time()
                 waiting = False
             else:
                 if not waiting:
-                    self.logger.info(f'Waiting for the next trigger: {next_time.strftime("%Y-%M-%d %H:%M")}')
+                    self.logger.info(f'Waiting for the next trigger: {next_time.strftime("%Y-%m-%d %H:%M")}')
                     waiting = True
                 time.sleep(60)
 
@@ -189,4 +189,4 @@ if __name__ == '__main__':
     # pp.pprint(zb.get_wallet_tokens())
     # zb.get_convex_tokens()
     # zb.process(network='ethereum')
-    zb.cron_trigger("*/30 * * * *")
+    zb.cron_trigger("0 * * * *")
